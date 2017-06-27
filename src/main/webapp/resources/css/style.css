@@ -1,32 +1,127 @@
-:root{
-    --colorPrimary: #8bc34a;
-    --colorDark: #5a9216;
-    --colorLight: #bef67a;
+/*================COLOR THEME================*/
+:root {
+    --colorPrimary: #bdbdbd;
+    --colorDark: #8d8d8d;
+    --colorLight: #efefef;
     --colorText: #000000;
-
 }
-body{
+
+/*================LAYOUT================*/
+body {
     background-color: var(--colorLight);
+    margin: 0;
+    font-family: Verdana, Georgia, serif;
+    font-size: 14px;
 }
 #Container{
-    margin: 12px auto 12px auto;
-    width: 1000px;
-    height: 700px;
-    padding: 8px;
-    font-family: "Courier New", "Liberation Sans", sans-serif;
+    width: 960px;
+    border: solid 2px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    margin: 0 auto;
+}
+#Header {
     background-color: var(--colorDark);
+    margin: 10px;
+    height: 90px;
+    border-radius: 5px;
 }
-#Logo{
-    width: 100%;
-    height: 100px;
+
+#Navbar ul {
+    padding: 5px;
+    list-style-type: none;
+    text-align: center;
+    background-color: black;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+#Navbar ul li {
+    display: inline;
+}
+#Navbar ul li a{
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    padding: .2em 1em;
+    color: white;
+    background-color: black;
+
+}
+#Navbar ul li a:hover{
+    color: black;
+    background-color: white;
+}
+.main {
     background-color: var(--colorPrimary);
-    font-size: large;
-    text-align: center;
+    margin: 10px 320px 10px 10px;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 110%;
 }
-#Menu{
-    width: 100%;
-    height: 30px;
-    background-color: var(--colorLight);
-    font-size: large;
+
+.sideright {
+    background-color: var(--colorPrimary);
+    margin: 0 10px 10px 10px;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 105%;
+    float: right;
+    width: 260px;
+    clear: right;
+}
+
+.imagesidebar {
+    margin: 0 10px 10px 10px;
+    border-radius: 5px;
+    float: right;
+    width: 300px;
+    clear: right;
+    opacity: 1.0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.imagesidebar:hover {
+    opacity: 0.4;
+}
+
+#footer {
+    background-color: var(--colorDark);
+    margin: 10px;
+    clear: both;
+    border-radius: 5px;
+    color: var(--colorText);
     text-align: center;
+    padding: 10px;
+    font-size: 90%;
+}
+
+/*================HEADING================*/
+h1 {
+    font-size: 120%;
+    color: red;
+}
+
+h2 {
+    font-size: 120%;
+    color: darkblue;
+}
+h3 {
+    font-size: 250%;
+    text-align: center;
+    color: var(--colorText);
+    font-family: "Century Gothic", "Gill Sans", Arial, sans-serif ;
+    margin: 0;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+@media (max-width: 600px) {
+    .imagesidebar{
+        display: none;
+    }
+    .sideright{
+        display: none;
+    }
 }
