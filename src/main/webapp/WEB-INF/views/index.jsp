@@ -4,84 +4,153 @@
 <html>
 <head>
     <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/flexboxgrid.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/font-awesome.css" />" rel="stylesheet">
     <title>Book Store</title>
 </head>
 <body>
-<div id="Container">
-    <div id="Header">
-        <h3>Black's Book Shop</h3>
+<!-- Header -->
+<header id="main-header">
+    <div class="container">
+        <div class="row end-sm end-md end-lg center-xs middle-xs middle-sm middle-md middle-lg">
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                <h1><span class="primary-text">Тезаус</span></h1>
+            </div>
+            <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                <nav id="navbar">
+                    <ul>
+                        <li class="current"><a href="Home">HOME</a></li>
+                        <li><a href="Store">STORE</a></li>
+                        <li><a href="About">ABOUT</a></li>
+                        <li><a href="Login">LOGIN</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </div>
-    <div id="Navbar">
-        <ul>
-            <li><a href="">HOME</a></li>
-            <li><a href="">STORE</a></li>
-            <li><a href="">ABOUT</a></li>
-            <li><a href="">LOGIN</a></li>
-        </ul>
-    </div>
-    <div class="sideright">
-        <h2>News</h2>
-        <p>News number 1</p>
-        <p>News number 2</p>
-        <p>News number 3</p>
-        <p>News number 4</p>
-        <p>News number 5</p>
-    </div>
-    <div class="sideright">
-        <h2>Feedback</h2>
-        <p>Feedback number 1</p>
-        <p>Feedback number 2</p>
-        <p>Feedback number 3</p>
-        <p>Feedback number 4</p>
-        <p>Feedback number 5</p>
-    </div>
-    <div>
-        <img class="imagesidebar" src="/BookStore/resources/img/Books.jpg">
-    </div>
-    <div class="main">
-        <h1>History of Books</h1>
-        <p>There were times when people had neither letters nor paper. The history of books is considered to begin with
-            a written language when literary works appeared on leaves, clay tablets, bark. Only in the 14th century
-            Johan Gutenberg from Germany invented printing with a movable type. Now millions of books are published
-            every year.</p>
-        <h1>Kinds of Books</h1>
-        <p>There are fiction and non-Fiction books. Fiction books are thought up by authors though they can be based on
-            true events. Non-Fiction books contain real facts.
+</header>
 
-            Fiction literature offers a great variety of genres to readers: romance, historical novels, science fiction,
-            fantasy, thrillers, fables, fairy-tales, drama, poetry. Non-Fiction includes biographies and
-            autobiographies, dictionaries, encyclopedias, almanacs. Every reader has his favourite genre corresponding
-            to his taste and character.</p>
-        <h1>Why Do People Read?</h1>
-        <p>People read books because they are a valuable source of information and knowledge. Studying is one of the
-            main reasons why people read books. It is impossible to imagine modern school without books.
+<!--ShowCase-->
+<section id="showcase">
+    <div class="container">
+        <div class="row center-xs center-sm center-md center-lg middle-xs middle-sm middle-md middle-lg">
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-7 showcase-content">
+                <h1>Книжный магазин <span class="primary-text">Тезаус</span></h1>
+                <p>Лучший подарок это книга</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-            The programme material is contained mostly in textbooks. Reading develops mind and thinking abilities. Books
-            consider the eternal questions of life, so they help us in everyday situations and stimulate our
-            self-perfection.</p>
+<!--Features-->
+<section id="features">
+    <div class="container">
+        <div class="row center-xs center-sm center-md center-lg">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h2>Наши приемущества</h2>
+                <p>Включают в себя:</p>
+                <!--Icon Row One-->
+                <div class="row center-xs center-sm center-md center-lg">
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                        <i class="fa fa-book"></i><br>
+                        <h4>Огромный выбор</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                        <i class="fa fa-diamond"></i><br>
+                        <h4>Превосходное качество</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                        <i class="fa fa-dollar"></i><br>
+                        <h4>Разумная цена</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                    </div>
+                </div>
+                <!--Icon Row Two-->
+                <div class="row center-xs center-sm center-md center-lg">
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                        <i class="fa fa-paper-plane"></i><br>
+                        <h4>Доставка до дверей</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                        <i class="fa fa-percent"></i><br>
+                        <h4>Система скидок</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                        <i class="fa fa-search"></i><br>
+                        <h4>Книги под заказ</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="main">
-        <h1>Quality</h1>
-        <p>quality, property, character, attribute mean an intelligible feature by which a thing may be identified.
-            quality is a general term applicable to any trait or characteristic whether individual or generic. ⟨material
-            with a silky quality⟩ property implies a characteristic that belongs to a thing's essential nature and may
-            be used to describe a type or species. ⟨the property of not conducting heat⟩ character applies to a peculiar
-            and distinctive quality of a thing or a class. ⟨remarks of an unseemly character⟩ attribute implies a
-            quality ascribed to a thing or a being. ⟨the attributes of a military hero⟩</p>
-        <h1>Prices</h1>
-        <p>A value that will purchase a finite quantity, weight, or other measure of a good or service.
-            As the consideration given in exchange for transfer of ownership, price forms the essential basis of
-            commercial transactions. It may be fixed by a contract, left to be determined by an agreed upon formula at a
-            future date, or discovered or negotiated during the course of dealings between the parties involved.</p>
-        <h1>Service</h1>
-        <p>A Service is an application component representing either an application's desire to perform a longer-running
-            operation while not interacting with the user or to supply functionality for other applications to use. Each
-            service class must have a corresponding declaration in its package's AndroidManifest.xml. Services can be
-            started with Context.startService() and Context.bindService().</p>
+</section>
+
+<!--Info-->
+<section id="info">
+    <div class="container">
+        <div class="row center-xs center-sm center-md center-lg middle-xs middle-sm middle-md middle-lg">
+            <div class="col col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <img src="/BookStore/resources/img/book.png" alt="">
+            </div>
+            <div class="col col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <h2>Читая книги вы:</h2>
+                <ul>
+                    <li><i class="fa fa-check"></i> Становитесь еще умнее</li>
+                    <li><i class="fa fa-check"></i> Можете поддержать беседу</li>
+                    <li><i class="fa fa-check"></i> Увеличиваете словарный запас</li>
+                    <li><i class="fa fa-check"></i> Расширяете кругозор</li>
+                    <li><i class="fa fa-check"></i> Развиваете фантазию</li>
+                    <li><i class="fa fa-check"></i> Познаёте мир</li>
+                    <li><i class="fa fa-check"></i> Приятно проводите время</li>
+                </ul>
+            </div>
+        </div>
     </div>
-    <div id="footer">
-        &copy;2017 Festival Media Group. All Rights Reserved.
+</section>
+
+<!--Company-->
+<section id="company">
+    <div class="container">
+        <div class="row middle-xs middle-sm middle-md middle-lg">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <h4>Связаться с нами</h4>
+                <ul>
+                    <li><i class="fa fa-phone"></i> 8-800-555-35-35</li>
+                    <li><i class="fa fa-envelope"></i> shop@tesarus.com</li>
+                    <li><i class="fa fa-map"></i> 450060, г.Уфа, ул.Победы 15, оф.201</li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <h4>О Нас</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi dolorum eius eveniet explicabo facere
+                    facilis impedit minima mollitia necessitatibus</p>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <h4>Рассылка новостей</h4>
+                <form>
+                    <input type="text" name="email" placeholder="Email"><br>
+                    <button type="submit" name="button">Подписаться</button>
+                </form>
+            </div>
+        </div>
     </div>
-</div>
+</section>
+
+<!--Footer-->
+<footer id="main-footer">
+    <div class="container">
+        <div class="row center-xs center-sm center-md center-lg ">
+            <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <p>Copyright &copy; 2017 | Festival Media Group</p>
+            </div>
+        </div>
+    </div>
+
+</footer>
 </body>
 </html>

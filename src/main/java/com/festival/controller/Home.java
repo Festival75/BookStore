@@ -11,6 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 public class Home {
 
     @RequestMapping("/")
+    public ModelAndView homePageInit(HttpServletRequest request, HttpServletResponse response){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("index");
+        return mv;
+    }
+
+    @RequestMapping("/Home")
     public ModelAndView homePage(HttpServletRequest request, HttpServletResponse response){
         ModelAndView mv = new ModelAndView();
         mv.setViewName("index");

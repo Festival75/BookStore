@@ -1,127 +1,199 @@
-/*================COLOR THEME================*/
-:root {
-    --colorPrimary: #bdbdbd;
-    --colorDark: #8d8d8d;
-    --colorLight: #efefef;
-    --colorText: #000000;
-}
-
-/*================LAYOUT================*/
-body {
-    background-color: var(--colorLight);
+body{
+    font-family: 'Open-sans', sans-serif;
+    font-size: 17px;
+    line-height: 1.5em;
     margin: 0;
-    font-family: Verdana, Georgia, serif;
-    font-size: 14px;
+    padding: 0;
 }
-#Container{
-    width: 960px;
-    border: solid 2px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    margin: 0 auto;
+img{
+    width: 100%;
 }
-#Header {
-    background-color: var(--colorDark);
-    margin: 10px;
-    height: 90px;
-    border-radius: 5px;
+.container{
+    margin: auto;
 }
 
-#Navbar ul {
-    padding: 5px;
-    list-style-type: none;
-    text-align: center;
-    background-color: black;
-    margin: 10px;
-    border-radius: 5px;
+/*COMMON CLASSES*/
+.primary-text{
+    color: #56a79a;
+}
+.primary-background{
+    background: #56a79a;
 }
 
-#Navbar ul li {
+/*HEADER*/
+#main-header{
+    border: 1px solid #56a79a;
+}
+
+/*NAVBAR*/
+#navbar{
+    text-transform: uppercase;
+}
+#navbar li{
     display: inline;
+    padding-right: 20px;
+    list-style: none;
 }
-#Navbar ul li a{
+#navbar a{
     text-decoration: none;
-    font-family: Arial, sans-serif;
-    padding: .2em 1em;
-    color: white;
-    background-color: black;
-
+    color: #888;
 }
-#Navbar ul li a:hover{
-    color: black;
-    background-color: white;
-}
-.main {
-    background-color: var(--colorPrimary);
-    margin: 10px 320px 10px 10px;
-    border-radius: 5px;
-    padding: 20px;
-    font-size: 110%;
+#navbar li.current a, #navbar li:hover{
+    color: #56a79a;
+    border-bottom: 3px solid #56a79a;
+    padding-bottom: 3px;
 }
 
-.sideright {
-    background-color: var(--colorPrimary);
-    margin: 0 10px 10px 10px;
-    border-radius: 5px;
-    padding: 20px;
-    font-size: 105%;
-    float: right;
-    width: 260px;
-    clear: right;
+/*SHOWCASE*/
+#showcase{
+    background: url(../img/MainFrameBG.jpg) no-repeat center center;
+    border-bottom: 1px solid #56a79a;
+    margin-bottom: 30px;
 }
-
-.imagesidebar {
-    margin: 0 10px 10px 10px;
-    border-radius: 5px;
-    float: right;
-    width: 300px;
-    clear: right;
-    opacity: 1.0;
-    transition: opacity 0.5s ease-in-out;
+#showcase .row{
+    height: 600px;
 }
-
-.imagesidebar:hover {
-    opacity: 0.4;
-}
-
-#footer {
-    background-color: var(--colorDark);
-    margin: 10px;
-    clear: both;
-    border-radius: 5px;
-    color: var(--colorText);
-    text-align: center;
-    padding: 10px;
-    font-size: 90%;
-}
-
-/*================HEADING================*/
-h1 {
-    font-size: 120%;
-    color: red;
-}
-
-h2 {
-    font-size: 120%;
-    color: darkblue;
-}
-h3 {
-    font-size: 250%;
-    text-align: center;
-    color: var(--colorText);
-    font-family: "Century Gothic", "Gill Sans", Arial, sans-serif ;
+#showcase h1{
+    font-size: 40px;
     margin: 0;
-    position: relative;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+    padding-bottom: 20px;
+}
+#showcase p{
+    color: #ccc;
+    margin: 0;
+}
+#showcase .showcase-content{
+    background: #333;
+    color: #fff;
+    border-radius: 90px;
+    padding: 40px;
+    opacity: 0.9;
 }
 
-@media (max-width: 600px) {
-    .imagesidebar{
-        display: none;
+/*FEATURES*/
+#features h2{
+    font-size: 32px;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+#features p{
+    color: #888;
+    margin: 0;
+    margin-bottom: 40px;
+}
+#features .fa{
+    font-size: 60px;
+    color: #56a79a;
+}
+
+/*Info*/
+#info{
+    background: #333 url(../img/bg-info.jpg) no-repeat;
+    color: #fff;
+}
+#info h2{
+    font-size: 35px;
+    margin: 0;
+    padding-bottom: 10px;
+}
+#info ul{
+    list-style: none;
+    padding: 0;
+}
+#info li{
+    line-height: 2em;
+    font-size: 20px;
+}
+
+/*Company*/
+#company{
+    background: #333;
+    padding: 10px 0;
+    color: #fff;
+}
+#company h4{
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+#company ul{
+    padding: 0;
+    list-style: none;
+    line-height: 2em;
+}
+#company input[type="text"]{
+    padding: 7px;
+}
+#company button{
+    background: #222;
+    color: #fff;
+    padding: 10px;
+    border: 0;
+}
+
+/*Footer*/
+#main-footer{
+    background: #56a79a;
+    color: #fff;
+}
+
+/*Page*/
+#page {
+    margin-bottom: 40px;
+}
+
+/*STORE*/
+
+.item ul li{
+    list-style: none;
+    padding: 10px;
+}
+
+.item ul li:nth-child(odd){
+    background: #333;
+    color: #fff;
+}
+.item ul li:nth-child(even){
+    background: #56a79a;
+    color: #fff;
+}
+
+/*Contact*/
+.contact form{
+background: #333;
+    color: #fff;
+    padding: 20px;
+}
+.contact form[type="text"]{
+    width: 50%;
+    height: 30px;
+    margin-bottom: 10px;
+}
+.contact textarea{
+    width: 50%;
+    height: 100px;
+
+}
+
+.contact form button{
+    width: 50%;
+    padding: 10px 0;
+    border: 0;
+    background: #222;
+    color: #fff;
+}
+
+.contact form label{
+    text-transform: uppercase;
+}
+/*Media Queries*/
+@media(max-width: 800px){
+    #showcase h1{
+        font-size: 30px;
     }
-    .sideright{
-        display: none;
+}
+@media(max-width: 500px){
+    #showcase .showcase-content{
+        padding: 40px 10px;
     }
 }
