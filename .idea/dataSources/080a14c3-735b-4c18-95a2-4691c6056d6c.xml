@@ -9,7 +9,8 @@
     </database>
     <schema id="3" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2017-06-26.07:44:40.089</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2017-06-29.07:48:15.431</IntrospectionTimestamp>
+      <IntrospectionStateNumber>718</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -28,5 +29,56 @@
     <schema id="8" parent="2" name="information_schema">
       <ObjectId>12123</ObjectId>
     </schema>
+    <sequence id="9" parent="3" name="customer_id_seq">
+      <ObjectId>16440</ObjectId>
+      <StateNumber>715</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <table id="10" parent="3" name="customer">
+      <ObjectId>16442</ObjectId>
+      <StateNumber>715</StateNumber>
+    </table>
+    <column id="11" parent="10" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>715</StateNumber>
+      <SequenceName>customer_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;customer_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="12" parent="10" name="login">
+      <Position>2</Position>
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>715</StateNumber>
+    </column>
+    <column id="13" parent="10" name="password">
+      <Position>3</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>718</StateNumber>
+    </column>
+    <column id="14" parent="10" name="name">
+      <Position>4</Position>
+      <DataType>varchar(15)|0</DataType>
+      <StateNumber>715</StateNumber>
+    </column>
+    <column id="15" parent="10" name="secname">
+      <Position>5</Position>
+      <DataType>varchar(20)|0</DataType>
+      <StateNumber>715</StateNumber>
+    </column>
+    <column id="16" parent="10" name="email">
+      <Position>6</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>715</StateNumber>
+    </column>
+    <index id="17" parent="10" name="customer_login_uindex">
+      <ObjectId>16446</ObjectId>
+      <ColNames>login</ColNames>
+      <Unique>1</Unique>
+    </index>
   </database-model>
 </dataSource>

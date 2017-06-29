@@ -19,10 +19,23 @@
             <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
                 <nav id="navbar">
                     <ul>
-                        <li><a href="Home">HOME</a></li>
-                        <li><a href="Store">STORE</a></li>
-                        <li><a href="About">ABOUT</a></li>
-                        <li class="current"><a href="Login">LOGIN</a></li>
+                        <li><a href="Home">Домой</a></li>
+                        <li><a href="Store">Магазин</a></li>
+                        <li><a href="About">О нас</a></li>
+                        <%
+                            String name = (String) session.getAttribute("login");
+                            String button;
+                            String exit;
+                            if (name==null){
+                                button = "<li class=\"current\"><a href=\"Login\">Вход</a></li>";
+                                out.print(button);
+                            }else{
+                                button = "<li class=\"greetings\"><a>Привет "+name+"</a></li>";
+                                exit ="<li><a href=\"Logout\">Выход</a></li>";
+                                out.print(exit);
+                                out.print(button);
+                            }
+                        %>
                     </ul>
                 </nav>
             </div>
@@ -30,38 +43,32 @@
     </div>
 </header>
 
-<!--Subheader-->
-<section id="subheader">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <h1>О нас</h1>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!--Main Page-->
-<section id="page" class="about">
+<section id="page" class="login">
     <div class="container">
         <div class="row center-xs center-sm center-md center-lg">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 contact">
-                <h2>Войти</h2>
-                <form>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 login">
+                <h2><span class="primary-text">Войти</span></h2>
+                <form action="/BookStore/auth" method="post">
                     <div>
-                        <label for="name" >Login</label><br>
-                        <input type="text" name="name">
+                        <label for="login" >Логин</label><br>
+                        <input type="text" name="login">
                     </div>
                     <div>
-                        <label for="email">Password</label><br>
-                        <input type="text" name="email">
+                        <label for="password">Пароль</label><br>
+                        <input type="password" name="password">
                     </div>
-                    <div>
-                        <label for="message">Message</label><br>
-                        <textarea name="message"></textarea>
-                    </div>
-                    <button type="submit" name="button">Войти</button>
+                    <button type="submit" name="action" value="Log In">Войти</button><br>
+                    <a href="Register">Регистрация</a><br>
+                    <%
+                        String error = (String) request.getAttribute("error");
+                        if (error==null){
+                            error = "";
+                        }
+
+                    %>
                 </form>
+                <h4 id="error-message"><%=error%></h4>
             </div>
         </div>
     </div>
@@ -71,7 +78,7 @@
 <!--Company-->
 <section id="company">
     <div class="container">
-        <div class="row">
+        <div class="row top-xs top-sm top-md top-lg center-xs center-sm center-md center-lg">
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                 <h4>Связаться с нами</h4>
                 <ul>

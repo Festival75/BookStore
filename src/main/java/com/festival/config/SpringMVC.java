@@ -1,6 +1,8 @@
 package com.festival.config;
 
 
+import com.festival.customer.dao.CustomerDAO;
+import com.festival.customer.impl.CustomerDAOImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -38,11 +40,16 @@ public class SpringMVC extends WebMvcConfigurerAdapter {
     public DataSource getDataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://localhost:5432/TestDB");
+        dataSource.setUrl("jdbc:postgresql://localhost:5432/BookStore");
         dataSource.setUsername("postgres");
         dataSource.setPassword("o9p0[-]=");
 
         return dataSource;
+    }
+
+    @Bean
+    public CustomerDAO getCustomerDAO(){
+        return new CustomerDAOImpl(getDataSource());
     }
 
 }

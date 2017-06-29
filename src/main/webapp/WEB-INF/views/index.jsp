@@ -19,11 +19,24 @@
             <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
                 <nav id="navbar">
                     <ul>
-                        <li class="current"><a href="Home">HOME</a></li>
-                        <li><a href="Store">STORE</a></li>
-                        <li><a href="About">ABOUT</a></li>
-                        <li><a href="Login">LOGIN</a></li>
-                    </ul>
+                        <li class="current"><a href="Home">Домой</a></li>
+                        <li><a href="Store">Магазин</a></li>
+                        <li><a href="About">О нас</a></li>
+                        <%
+                            String name = (String) session.getAttribute("login");
+                            String button;
+                            String exit;
+                            if (name==null){
+                                button = "<li><a href=\"Login\">Вход</a></li>";
+                                out.print(button);
+                            }else{
+                                button = "<li class=\"greetings\"><a>Привет "+name+"</a></li>";
+                                exit ="<li><a href=\"Logout\">Выход</a></li>";
+                                out.print(exit);
+                                out.print(button);
+                            }
+                        %>
+                        </ul>
                 </nav>
             </div>
         </div>
@@ -36,7 +49,7 @@
         <div class="row center-xs center-sm center-md center-lg middle-xs middle-sm middle-md middle-lg">
             <div class="col-xs-10 col-sm-10 col-md-10 col-lg-7 showcase-content">
                 <h1>Книжный магазин <span class="primary-text">Тезаус</span></h1>
-                <p>Лучший подарок это книга</p>
+                <p>Добро пожаловать в мир книг</p>
             </div>
         </div>
     </div>
@@ -95,7 +108,7 @@
     <div class="container">
         <div class="row center-xs center-sm center-md center-lg middle-xs middle-sm middle-md middle-lg">
             <div class="col col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <img src="/BookStore/resources/img/book.png" alt="">
+                <img src="/BookStore/resources/img/reading_boy520.png" alt="">
             </div>
             <div class="col col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <h2>Читая книги вы:</h2>
@@ -116,7 +129,7 @@
 <!--Company-->
 <section id="company">
     <div class="container">
-        <div class="row middle-xs middle-sm middle-md middle-lg">
+        <div class="row top-xs top-sm top-md top-lg center-xs center-sm center-md center-lg">
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                 <h4>Связаться с нами</h4>
                 <ul>

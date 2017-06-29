@@ -19,10 +19,23 @@
             <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
                 <nav id="navbar">
                     <ul>
-                        <li><a href="Home">HOME</a></li>
-                        <li><a href="Store">STORE</a></li>
-                        <li class="current"><a href="About">ABOUT</a></li>
-                        <li><a href="Login">LOGIN</a></li>
+                        <li><a href="Home">Домой</a></li>
+                        <li><a href="Store">Магазин</a></li>
+                        <li class="current"><a href="About">О нас</a></li>
+                        <%
+                            String name = (String) session.getAttribute("login");
+                            String button;
+                            String exit;
+                            if (name==null){
+                                button = "<li><a href=\"Login\">Вход</a></li>";
+                                out.print(button);
+                            }else{
+                                button = "<li class=\"greetings\"><a>Привет "+name+"</a></li>";
+                                exit ="<li><a href=\"Logout\">Выход</a></li>";
+                                out.print(exit);
+                                out.print(button);
+                            }
+                        %>
                     </ul>
                 </nav>
             </div>
@@ -62,7 +75,7 @@
 <!--Company-->
 <section id="company">
     <div class="container">
-        <div class="row">
+        <div class="row top-xs top-sm top-md top-lg center-xs center-sm center-md center-lg">
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                 <h4>Связаться с нами</h4>
                 <ul>
