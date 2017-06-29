@@ -30,7 +30,7 @@
                                 button = "<li><a href=\"Login\">Вход</a></li>";
                                 out.print(button);
                             }else{
-                                button = "<li class=\"greetings\"><a>Привет "+name+"</a></li>";
+                                button = "<li class=\"greetings\"><a>Привет <span class=\"primary-text\">"+name+"</span></a></li>";
                                 exit ="<li><a href=\"Logout\">Выход</a></li>";
                                 out.print(exit);
                                 out.print(button);
