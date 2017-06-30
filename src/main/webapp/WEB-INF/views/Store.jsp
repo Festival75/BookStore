@@ -23,17 +23,25 @@
                         <li class="current"><a href="Store">Магазин</a></li>
                         <li><a href="About">О нас</a></li>
                         <%
-                            String name = (String) session.getAttribute("login");
+                            String name = (String) session.getAttribute("name");
+                            String login = (String) session.getAttribute("login");
                             String button;
                             String exit;
-                            if (name==null){
+                            if (login==null){
                                 button = "<li><a href=\"Login\">Вход</a></li>";
                                 out.print(button);
-                            }else{
-                                button = "<li class=\"greetings\"><a>Привет <span class=\"primary-text\">"+name+"</span></a></li>";
-                                exit ="<li><a href=\"Logout\">Выход</a></li>";
-                                out.print(exit);
-                                out.print(button);
+                            }else {
+                                if (name==null || name.equals("")) {
+                                    button = "<li class=\"greetings\"><a>Привет <span class=\"primary-text\">" + login + "</span></a></li>";
+                                    exit ="<li><a href=\"Logout\">Выход</a></li>";
+                                    out.print(exit);
+                                    out.print(button);
+                                }else {
+                                    button = "<li class=\"greetings\"><a>Привет <span class=\"primary-text\">" + name + "</span></a></li>";
+                                    exit ="<li><a href=\"Logout\">Выход</a></li>";
+                                    out.print(exit);
+                                    out.print(button);
+                                }
                             }
                         %>
                     </ul>

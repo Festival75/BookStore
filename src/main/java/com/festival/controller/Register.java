@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class Register {
@@ -31,6 +32,7 @@ public class Register {
     @RequestMapping(value = "/NewUser", method = RequestMethod.POST)
     public ModelAndView registerWizard (@RequestParam String action, HttpServletResponse response, HttpServletRequest request){
         ModelAndView mv = new ModelAndView();
+        HttpSession session = request.getSession();
         if (action.equals("Cancel")){
             mv.setViewName("Login");
             return mv;
@@ -42,6 +44,7 @@ public class Register {
             String secname = request.getParameter("secname");
             String email = request.getParameter("email");
             added = customerDAO.createCustomer(login,password,name,secname,email);
+            session.setAttribute("name", name);
             mv.setViewName("Login");
             if (added){
                 mv.addObject("error", "Новый пользователь зарегестрирован!");

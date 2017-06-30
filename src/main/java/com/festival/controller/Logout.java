@@ -15,6 +15,7 @@ public class Logout {
     public ModelAndView aboutPage (HttpServletResponse response, HttpServletRequest request){
         HttpSession session = request.getSession();
         session.setAttribute("login", null);
+        session.setAttribute("name", null);
         ModelAndView mv = new ModelAndView();
         mv.setViewName("index");
         return mv;

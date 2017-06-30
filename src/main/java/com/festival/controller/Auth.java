@@ -41,6 +41,7 @@ public class Auth {
                 if (login.equals(loginDB) && password.equals(passwordDB)) {
                     HttpSession session = request.getSession();
                     session.setAttribute("login", login);
+                    session.setAttribute("name", customer.getName());
                     mv.setViewName("index");
                     return mv;
                 } else {
