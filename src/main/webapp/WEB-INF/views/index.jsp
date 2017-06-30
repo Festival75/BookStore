@@ -16,7 +16,7 @@
     <div class="container">
         <div class="row end-sm end-md end-lg center-xs middle-xs middle-sm middle-md middle-lg">
             <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-                <h1><span class="primary-text">Тезаус</span></h1>
+                <h1><span class="primary-text">Тезаурус</span></h1>
             </div>
             <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
                 <nav id="navbar">
@@ -50,7 +50,7 @@
     <div class="container">
         <div class="row center-xs center-sm center-md center-lg middle-xs middle-sm middle-md middle-lg">
             <div class="col-xs-10 col-sm-10 col-md-10 col-lg-7 showcase-content">
-                <h1>Книжный магазин <span class="primary-text">Тезаус</span></h1>
+                <h1>Книжный магазин <span class="primary-text">Тезаурус</span></h1>
                 <p>Добро пожаловать в мир книг</p>
             </div>
         </div>

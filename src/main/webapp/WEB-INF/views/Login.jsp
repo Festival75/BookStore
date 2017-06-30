@@ -14,7 +14,7 @@
     <div class="container">
         <div class="row end-sm end-md end-lg center-xs middle-xs middle-sm middle-md middle-lg">
             <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-                <h1><span class="primary-text">Тезаус</span></h1>
+                <h1><span class="primary-text">Тезаурус</span></h1>
             </div>
             <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
                 <nav id="navbar">
