@@ -9,8 +9,8 @@
     </database>
     <schema id="3" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2017-06-29.07:48:15.431</IntrospectionTimestamp>
-      <IntrospectionStateNumber>718</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2017-06-30.08:19:27.526</IntrospectionTimestamp>
+      <IntrospectionStateNumber>719</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -37,7 +37,7 @@
     </sequence>
     <table id="10" parent="3" name="customer">
       <ObjectId>16442</ObjectId>
-      <StateNumber>715</StateNumber>
+      <StateNumber>719</StateNumber>
     </table>
     <column id="11" parent="10" name="id">
       <Position>1</Position>
@@ -75,7 +75,12 @@
       <NotNull>1</NotNull>
       <StateNumber>715</StateNumber>
     </column>
-    <index id="17" parent="10" name="customer_login_uindex">
+    <column id="17" parent="10" name="foto">
+      <Position>7</Position>
+      <DataType>bytea|0</DataType>
+      <StateNumber>719</StateNumber>
+    </column>
+    <index id="18" parent="10" name="customer_login_uindex">
       <ObjectId>16446</ObjectId>
       <ColNames>login</ColNames>
       <Unique>1</Unique>
