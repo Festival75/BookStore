@@ -6,6 +6,8 @@
     <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/css/flexboxgrid.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/css/font-awesome.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/w3.css" />" rel="stylesheet">
+
     <title>Book Store</title>
 </head>
 <body>
@@ -104,7 +106,7 @@
 </section>
 
 <!--Info-->
-<section id="info">
+<!--<section id="info">
     <div class="container">
         <div class="row center-xs center-sm center-md center-lg middle-xs middle-sm middle-md middle-lg">
             <div class="col col-xs-12 col-sm-6 col-md-6 col-lg-6">
@@ -121,6 +123,59 @@
                     <li><i class="fa fa-check"></i> Познаёте мир</li>
                     <li><i class="fa fa-check"></i> Приятно проводите время</li>
                 </ul>
+            </div>
+        </div>
+    </div>
+</section> -->
+<section id="slideshow">
+    <div class="container">
+        <div class="row center-xs center-sm center-md center-lg">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="w3-content w3-display-container">
+                    <img class="mySlides" src="/BookStore/resources/img/slide1.jpg" style="width:100%">
+                    <img class="mySlides" src="/BookStore/resources/img/slide2.jpg" style="width:100%">
+                    <img class="mySlides" src="/BookStore/resources/img/slide3.jpg" style="width:100%">
+                    <img class="mySlides" src="/BookStore/resources/img/slide4.jpg" style="width:100%">
+                    <img class="mySlides" src="/BookStore/resources/img/slide5.jpg" style="width:100%">
+                    <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+                        <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+                        <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+                        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+                        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+                        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+                        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(4)"></span>
+                        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(5)"></span>
+                    </div>
+                </div>
+
+                <script>
+                    var slideIndex = 1;
+                    showDivs(slideIndex);
+
+                    function plusDivs(n) {
+                        showDivs(slideIndex += n);
+                    }
+
+                    function currentDiv(n) {
+                        showDivs(slideIndex = n);
+                    }
+
+                    function showDivs(n) {
+                        var i;
+                        var x = document.getElementsByClassName("mySlides");
+                        var dots = document.getElementsByClassName("demo");
+                        if (n > x.length) {slideIndex = 1}
+                        if (n < 1) {slideIndex = x.length}
+                        for (i = 0; i < x.length; i++) {
+                            x[i].style.display = "none";
+                        }
+                        for (i = 0; i < dots.length; i++) {
+                            dots[i].className = dots[i].className.replace(" w3-white", "");
+                        }
+                        x[slideIndex-1].style.display = "block";
+                        dots[slideIndex-1].className += " w3-white";
+                    }
+                </script>
             </div>
         </div>
     </div>

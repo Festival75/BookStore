@@ -94,28 +94,30 @@ body{
     color: #56a79a;
 }
 
-/*Info*/
-#info{
-    background: #333 url(../img/info-bg.jpg) no-repeat;
+/*Slideshow*/
+#slideshow .mySlides {display:none}
+#slideshow .w3-left, #slideshow .w3-right, #slideshow .w3-badge {cursor:pointer}
+#slideshow .w3-badge {height:13px;width:13px;padding:0}
+#slideshow {
+    height: 600px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: black url(../img/sliderBG.jpg);
+}
 
+#slideshow img{
+    height: 600px;
+    width: 1310px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);;
+    border-radius: 30px;
+    opacity: 0.9;
 }
-#info img{
-    margin: 40px auto 40px auto;
-    height: 100%;
-}
-#info h2{
+#slideshow h2{
 
     font-size: 30px;
     margin: 0;
     padding-bottom: 10px;
-}
-#info ul{
-    list-style: none;
-    padding: 0;
-}
-#info li{
-    line-height: 2em;
-    font-size: 15px;
 }
 
 /*Company*/
@@ -223,3 +225,4 @@ background: #333;
         padding: 40px 10px;
     }
 }
+
