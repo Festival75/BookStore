@@ -2,7 +2,7 @@ package com.festival.customer.model;
 
 public class Customer {
 
-    private int id;
+
     private String login;
     private String password;
     private String name;
@@ -10,8 +10,7 @@ public class Customer {
     private String email;
 
     public Customer(){}
-    public Customer(int id, String login, String password, String name, String secname, String email){
-        this.id =id;
+    public Customer( String login, String password, String name, String secname, String email){
         this.login = login;
         this.password = password;
         this.name = name;
@@ -19,13 +18,8 @@ public class Customer {
         this.email = email;
     }
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+
 
     public String getEmail() {
         return email;

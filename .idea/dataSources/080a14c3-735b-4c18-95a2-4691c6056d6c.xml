@@ -3,14 +3,14 @@
   <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.1">
     <root id="1"/>
     <database id="2" parent="1" name="BookStore">
-      <ObjectId>16427</ObjectId>
+      <ObjectId>16393</ObjectId>
       <Current>1</Current>
       <Visible>1</Visible>
     </database>
     <schema id="3" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2017-06-30.08:19:27.526</IntrospectionTimestamp>
-      <IntrospectionStateNumber>719</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2017-06-30.17:10:15.964</IntrospectionTimestamp>
+      <IntrospectionStateNumber>549</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -21,67 +21,48 @@
       <ObjectId>99</ObjectId>
     </schema>
     <schema id="6" parent="2" name="pg_temp_1">
-      <ObjectId>11816</ObjectId>
+      <ObjectId>11848</ObjectId>
     </schema>
     <schema id="7" parent="2" name="pg_toast_temp_1">
-      <ObjectId>11817</ObjectId>
+      <ObjectId>11849</ObjectId>
     </schema>
     <schema id="8" parent="2" name="information_schema">
-      <ObjectId>12123</ObjectId>
+      <ObjectId>12113</ObjectId>
     </schema>
-    <sequence id="9" parent="3" name="customer_id_seq">
-      <ObjectId>16440</ObjectId>
-      <StateNumber>715</StateNumber>
-      <SequenceIdentity>1</SequenceIdentity>
-      <BelongsToColumn>1</BelongsToColumn>
-    </sequence>
-    <table id="10" parent="3" name="customer">
-      <ObjectId>16442</ObjectId>
-      <StateNumber>719</StateNumber>
+    <table id="9" parent="3" name="customer">
+      <ObjectId>16396</ObjectId>
+      <StateNumber>545</StateNumber>
     </table>
-    <column id="11" parent="10" name="id">
-      <Position>1</Position>
-      <DataType>integer|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>715</StateNumber>
-      <SequenceName>customer_id_seq</SequenceName>
-      <DefaultExpression>nextval(&apos;customer_id_seq&apos;::regclass)</DefaultExpression>
-    </column>
-    <column id="12" parent="10" name="login">
+    <column id="10" parent="9" name="login">
       <Position>2</Position>
       <DataType>varchar(15)|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>715</StateNumber>
+      <StateNumber>545</StateNumber>
     </column>
-    <column id="13" parent="10" name="password">
+    <column id="11" parent="9" name="password">
       <Position>3</Position>
-      <DataType>varchar(10)|0</DataType>
+      <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>718</StateNumber>
+      <StateNumber>545</StateNumber>
     </column>
-    <column id="14" parent="10" name="name">
+    <column id="12" parent="9" name="name">
       <Position>4</Position>
-      <DataType>varchar(15)|0</DataType>
-      <StateNumber>715</StateNumber>
+      <DataType>varchar(20)|0</DataType>
+      <StateNumber>545</StateNumber>
     </column>
-    <column id="15" parent="10" name="secname">
+    <column id="13" parent="9" name="secname">
       <Position>5</Position>
       <DataType>varchar(20)|0</DataType>
-      <StateNumber>715</StateNumber>
+      <StateNumber>545</StateNumber>
     </column>
-    <column id="16" parent="10" name="email">
+    <column id="14" parent="9" name="email">
       <Position>6</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>715</StateNumber>
+      <StateNumber>545</StateNumber>
     </column>
-    <column id="17" parent="10" name="foto">
-      <Position>7</Position>
-      <DataType>bytea|0</DataType>
-      <StateNumber>719</StateNumber>
-    </column>
-    <index id="18" parent="10" name="customer_login_uindex">
-      <ObjectId>16446</ObjectId>
+    <index id="15" parent="9" name="customer_login_uindex">
+      <ObjectId>16402</ObjectId>
       <ColNames>login</ColNames>
       <Unique>1</Unique>
     </index>

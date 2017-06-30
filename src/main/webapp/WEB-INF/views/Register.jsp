@@ -49,7 +49,7 @@
         <div class="row center-xs center-sm center-md center-lg">
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 login">
                 <h2><span class="primary-text">Новый</span> пользователь</h2>
-                <form>
+                <form action="/BookStore/NewUser" method="post">
                     <div>
                         <input type="text" name="name" placeholder="Имя">
                     </div>
@@ -65,7 +65,8 @@
                     <div>
                         <input type="text" name="email" placeholder="Email" >
                     </div>
-                    <button type="submit" name="button">Регистрация</button><br>
+                    <button type="submit" name="action" value="Register">Регистрация</button>
+                    <button name="action" value="Cancel ">Отмена</button><br>
                 </form>
             </div>
         </div>

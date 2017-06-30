@@ -24,7 +24,6 @@ public class CustomerDAOImpl implements CustomerDAO {
                 return template.query(sql, resultSet -> {
                     if (resultSet.next()) {
                         Customer customer = new Customer();
-                        customer.setId(resultSet.getInt("id"));
                         customer.setLogin(resultSet.getString("login"));
                         customer.setPassword(resultSet.getString("password"));
                         customer.setName(resultSet.getString("name"));
@@ -46,7 +45,6 @@ public class CustomerDAOImpl implements CustomerDAO {
 
         return template.query(sql, (resultSet, i) -> {
             Customer aCustomer = new Customer();
-            aCustomer.setId(resultSet.getInt("id"));
             aCustomer.setLogin(resultSet.getString("login"));
             aCustomer.setPassword(resultSet.getString("password"));
             aCustomer.setName(resultSet.getString("firstname"));
