@@ -105,28 +105,6 @@
     </div>
 </section>
 
-<!--Info-->
-<!--<section id="info">
-    <div class="container">
-        <div class="row center-xs center-sm center-md center-lg middle-xs middle-sm middle-md middle-lg">
-            <div class="col col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <img src="/BookStore/resources/img/reading_boy520.png" alt="">
-            </div>
-            <div class="col col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <h2>Читая книги вы:</h2>
-                <ul>
-                    <li><i class="fa fa-check"></i> Становитесь еще умнее</li>
-                    <li><i class="fa fa-check"></i> Можете поддержать беседу</li>
-                    <li><i class="fa fa-check"></i> Увеличиваете словарный запас</li>
-                    <li><i class="fa fa-check"></i> Расширяете кругозор</li>
-                    <li><i class="fa fa-check"></i> Развиваете фантазию</li>
-                    <li><i class="fa fa-check"></i> Познаёте мир</li>
-                    <li><i class="fa fa-check"></i> Приятно проводите время</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section> -->
 <section id="slideshow">
     <div class="container">
         <div class="row center-xs center-sm center-md center-lg">
@@ -148,34 +126,7 @@
                     </div>
                 </div>
 
-                <script>
-                    var slideIndex = 1;
-                    showDivs(slideIndex);
-
-                    function plusDivs(n) {
-                        showDivs(slideIndex += n);
-                    }
-
-                    function currentDiv(n) {
-                        showDivs(slideIndex = n);
-                    }
-
-                    function showDivs(n) {
-                        var i;
-                        var x = document.getElementsByClassName("mySlides");
-                        var dots = document.getElementsByClassName("demo");
-                        if (n > x.length) {slideIndex = 1}
-                        if (n < 1) {slideIndex = x.length}
-                        for (i = 0; i < x.length; i++) {
-                            x[i].style.display = "none";
-                        }
-                        for (i = 0; i < dots.length; i++) {
-                            dots[i].className = dots[i].className.replace(" w3-white", "");
-                        }
-                        x[slideIndex-1].style.display = "block";
-                        dots[slideIndex-1].className += " w3-white";
-                    }
-                </script>
+                <script type="text/javascript" src="/BookStore/resources/js/slideshow.js"></script>
             </div>
         </div>
     </div>

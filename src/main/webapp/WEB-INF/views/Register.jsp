@@ -51,24 +51,19 @@
                 <h2><span class="primary-text">Новый</span> пользователь</h2>
                 <form>
                     <div>
-                        <label for="name" >Имя</label><br>
-                        <input type="text" name="name">
+                        <input type="text" name="name" placeholder="Имя">
                     </div>
                     <div>
-                        <label for="secname">Фамилия</label><br>
-                        <input type="text" name="secname">
+                        <input type="text" name="secname" placeholder="Фамилия">
                     </div>
                     <div>
-                        <label for="login" >Логин</label><br>
-                        <input type="text" name="login">
+                        <input type="text" name="login" placeholder="Логин" autocomplete="new-password">
                     </div>
                     <div>
-                        <label for="email" >Email</label><br>
-                        <input type="text" name="email">
+                        <input type="password" name="password" placeholder="Пароль" autocomplete="new-password">
                     </div>
                     <div>
-                        <label for="password">Пароль</label><br>
-                        <input type="password" name="password">
+                        <input type="text" name="email" placeholder="Email" >
                     </div>
                     <button type="submit" name="button">Регистрация</button><br>
                 </form>
