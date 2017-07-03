@@ -32,17 +32,17 @@
                             String button;
                             String exit;
                             if (login==null){
-                                button = "<li><a href=\"Login\">Вход</a></li>";
+                                button = "<li class=\"current\"><a href=\"Login\">Вход</a></li>";
                                 out.print(button);
                             }else {
                                 if (name==null || name.equals("")) {
                                     button = "<li class=\"greetings\"><a>Привет <span class=\"primary-text\">" + login + "</span></a></li>";
-                                    exit ="<li><a href=\"Logout\">Выход</a></li>";
+                                    exit ="<li class=\"current\"><a href=\"Logout\">Выход</a></li>";
                                     out.print(exit);
                                     out.print(button);
                                 }else {
                                     button = "<li class=\"greetings\"><a>Привет <span class=\"primary-text\">" + name + "</span></a></li>";
-                                    exit ="<li><a href=\"Logout\">Выход</a></li>";
+                                    exit ="<li class=\"current\"><a href=\"Logout\">Выход</a></li>";
                                     out.print(exit);
                                     out.print(button);
                                 }
@@ -74,13 +74,18 @@
                     <a href="Register">Регистрация</a><br>
                     <%
                         String error = (String) request.getAttribute("error");
+                        String msg = (String) request.getAttribute("msg");
                         if (error==null){
                             error = "";
+                        }
+                        if (msg==null){
+                            msg = "";
                         }
 
                     %>
                 </form>
                 <h4 id="error-message"><%=error%></h4>
+                <h4 id="message"><%=msg%></h4>
             </div>
         </div>
     </div>

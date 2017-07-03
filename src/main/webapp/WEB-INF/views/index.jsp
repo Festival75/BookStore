@@ -113,6 +113,7 @@
     </div>
 </section>
 
+<!--SlideShow-->
 <section id="slideshow">
     <div class="container">
         <div class="row center-xs center-sm center-md center-lg">

@@ -28,17 +28,17 @@
                             String button;
                             String exit;
                             if (login==null){
-                                button = "<li><a href=\"Login\">Вход</a></li>";
+                                button = "<li class=\"current\"><a href=\"Login\">Вход</a></li>";
                                 out.print(button);
                             }else {
                                 if (name==null || name.equals("")) {
                                     button = "<li class=\"greetings\"><a>Привет <span class=\"primary-text\">" + login + "</span></a></li>";
-                                    exit ="<li><a href=\"Logout\">Выход</a></li>";
+                                    exit ="<li class=\"current\"><a href=\"Logout\">Выход</a></li>";
                                     out.print(exit);
                                     out.print(button);
                                 }else {
                                     button = "<li class=\"greetings\"><a>Привет <span class=\"primary-text\">" + name + "</span></a></li>";
-                                    exit ="<li><a href=\"Logout\">Выход</a></li>";
+                                    exit ="<li class=\"current\"><a href=\"Logout\">Выход</a></li>";
                                     out.print(exit);
                                     out.print(button);
                                 }
@@ -57,7 +57,16 @@
         <div class="row center-xs center-sm center-md center-lg">
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 login">
                 <h2><span class="primary-text">Новый</span> пользователь</h2>
-                <form action="/BookStore/NewUser" method="post">
+                <form name="regForm" action="/BookStore/newUser" method="post">
+                    <div>
+                        <input type="text" name="login" placeholder="Логин*" autocomplete="new-password">
+                    </div>
+                    <div>
+                        <input type="password" name="password" placeholder="Пароль*" autocomplete="new-password">
+                    </div>
+                    <div>
+                        <input type="password" name="rpassword" placeholder="Пароль еще раз*" autocomplete="new-password">
+                    </div>
                     <div>
                         <input type="text" name="name" placeholder="Имя">
                     </div>
@@ -65,17 +74,26 @@
                         <input type="text" name="secname" placeholder="Фамилия">
                     </div>
                     <div>
-                        <input type="text" name="login" placeholder="Логин" autocomplete="new-password">
-                    </div>
-                    <div>
-                        <input type="password" name="password" placeholder="Пароль" autocomplete="new-password">
-                    </div>
-                    <div>
                         <input type="text" name="email" placeholder="Email" >
                     </div>
-                    <button type="submit" name="action" value="Register">Регистрация</button>
+                    <script type="text/javascript" src="/BookStore/resources/js/validate.js"></script>
+                    <button type="submit" name="action" onclick="return validate()" value="Register">Регистрация</button>
                     <button name="action" value="Cancel ">Отмена</button><br>
+
+                    <%
+                        String error = (String) request.getAttribute("error");
+                        String msg = (String) request.getAttribute("msg");
+                        if (error==null){
+                            error = "";
+                        }
+                        if (msg==null){
+                            msg = "";
+                        }
+
+                    %>
+                    <h4 id="message"><%=msg%></h4>
                 </form>
+
             </div>
         </div>
     </div>

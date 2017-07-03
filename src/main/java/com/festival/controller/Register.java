@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 
 @Controller
 public class Register {
@@ -23,35 +24,31 @@ public class Register {
     }
 
     @RequestMapping("/Register")
-    public ModelAndView registerPage (HttpServletResponse response, HttpServletRequest request){
+    public ModelAndView registerPage(HttpServletResponse response, HttpServletRequest request) {
         ModelAndView mv = new ModelAndView();
         mv.setViewName("Register");
         return mv;
     }
 
-    @RequestMapping(value = "/NewUser", method = RequestMethod.POST)
-    public ModelAndView registerWizard (@RequestParam String action, HttpServletResponse response, HttpServletRequest request){
+    @RequestMapping(value = "/newUser", method = RequestMethod.POST)
+    public ModelAndView registerWizard(@RequestParam String action, HttpServletResponse response, HttpServletRequest request) throws IOException {
         ModelAndView mv = new ModelAndView();
+        String fnmae = (String) request.getParameter("name");
+        String snmae = (String) request.getParameter("secname");
+        String login = (String) request.getParameter("login");
+        String password = (String) request.getParameter("password");
+        String rpassword = (String) request.getParameter("rpassword");
+        String email = (String) request.getParameter("email");
         HttpSession session = request.getSession();
-        if (action.equals("Cancel")){
-            mv.setViewName("Login");
-            return mv;
-        }else {
-            Boolean added;
-            String login = request.getParameter("login");
-            String password = request.getParameter("password");
-            String name = request.getParameter("name");
-            String secname = request.getParameter("secname");
-            String email = request.getParameter("email");
-            added = customerDAO.createCustomer(login,password,name,secname,email);
-            session.setAttribute("name", name);
-            mv.setViewName("Login");
-            if (added){
-                mv.addObject("error", "Новый пользователь зарегестрирован!");
-            }else {
-                mv.addObject("error","Такой пользователь уже зарегестрирован!");
-            }
-            return mv;
-        }
+        String msg;
+
+
+        msg = "Пользователь успешно зарегестрирован";
+        mv.addObject("msg", msg);
+        customerDAO.createCustomer(login, password, fnmae, snmae, email);
+        session.setAttribute("name", fnmae);
+        mv.setViewName("Login");
+        return mv;
+
     }
 }
