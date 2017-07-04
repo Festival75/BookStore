@@ -32,6 +32,7 @@ public class Register {
 
     @RequestMapping(value = "/newUser", method = RequestMethod.POST)
     public ModelAndView registerWizard(@RequestParam String action, HttpServletResponse response, HttpServletRequest request) throws IOException {
+        String msg;
         ModelAndView mv = new ModelAndView();
         String fnmae = (String) request.getParameter("name");
         String snmae = (String) request.getParameter("secname");
@@ -40,15 +41,13 @@ public class Register {
         String rpassword = (String) request.getParameter("rpassword");
         String email = (String) request.getParameter("email");
         HttpSession session = request.getSession();
-        String msg;
-
-
         msg = "Пользователь успешно зарегестрирован";
         mv.addObject("msg", msg);
         customerDAO.createCustomer(login, password, fnmae, snmae, email);
         session.setAttribute("name", fnmae);
         mv.setViewName("Login");
         return mv;
-
     }
+
+
 }

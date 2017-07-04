@@ -78,7 +78,6 @@
                     </div>
                     <script type="text/javascript" src="/BookStore/resources/js/validate.js"></script>
                     <button type="submit" name="action" onclick="return validate()" value="Register">Регистрация</button>
-                    <button name="action" value="Cancel ">Отмена</button><br>
 
                     <%
                         String error = (String) request.getAttribute("error");

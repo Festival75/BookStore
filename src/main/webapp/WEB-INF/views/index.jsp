@@ -11,6 +11,8 @@
     <title>Book Store</title>
 </head>
 <body>
+<script type="text/javascript" src="/BookStore/resources/js/toTop.js"></script>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Наверх</button>
 <!-- Header -->
 <header id="main-header">
     <div class="container">
