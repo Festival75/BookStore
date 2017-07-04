@@ -2,7 +2,6 @@ package com.festival.book.impl;
 
 import com.festival.book.dao.BookDAO;
 import com.festival.book.model.Book;
-import com.festival.customer.model.Customer;
 import org.apache.commons.io.FileUtils;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -10,6 +9,7 @@ import javax.sql.DataSource;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+
 
 public class BookDAOImpl implements BookDAO {
 
@@ -80,13 +80,13 @@ public class BookDAOImpl implements BookDAO {
     }
 
     @Override
-    public Boolean addBook(String title, String author, String genre_main, String genre_second, int cost, int quantity, String image) throws IOException {
+    public Boolean addBook(String title, String author, String genre_main, String genre_second, int cost, int quantity, String image, String description) throws IOException {
         if (getBook(title) == null) {
 
             File imageSource = new File("/img/book_image/"+title+".jpg");
             byte[] imageBytes = FileUtils.readFileToByteArray(imageSource);
-            String sql = "INSERT INTO book (title, author, genre_main, genre_second, cost, quantity, image)" +
-                    "VALUES ('" + title + "','" + author + "','" + genre_main + "','" + genre_second + "','" + cost + "','" + quantity + "','" + imageBytes +  "')";
+            String sql = "INSERT INTO book (title, author, genre_main, genre_second, cost, quantity, image, description)" +
+                    "VALUES ('" + title + "','" + author + "','" + genre_main + "','" + genre_second + "','" + cost + "','" + quantity + "','" + imageBytes +"','" + description +  "')";
             template.update(sql);
             return true;
 
@@ -96,7 +96,7 @@ public class BookDAOImpl implements BookDAO {
     }
 
     @Override
-    public Boolean updateBook(String title, String author, String genre_main, String genre_second, int cost, int quantity, String image) {
+    public Boolean updateBook(String title, String author, String genre_main, String genre_second, int cost, int quantity, String image, String description) {
         return null;
     }
 

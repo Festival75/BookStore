@@ -9,8 +9,8 @@ public interface BookDAO {
 
     Book getBook(String title);
     List<Book> listBooks();
-    Boolean addBook(String title, String author,  String genre_main, String genre_second, int cost, int quantity, String image) throws IOException;
-    Boolean updateBook(String title, String author,  String genre_main, String genre_second, int cost, int quantity, String image);
+    Boolean addBook(String title, String author,  String genre_main, String genre_second, int cost, int quantity, String image, String description) throws IOException;
+    Boolean updateBook(String title, String author,  String genre_main, String genre_second, int cost, int quantity, String image, String description);
     Boolean deleteBook(String title);
 
 }

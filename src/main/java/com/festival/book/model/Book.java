@@ -2,16 +2,25 @@ package com.festival.book.model;
 
 public class Book {
 
-    String title;
-    String author;
-    String genre_main;
-    String genre_second;
-    int cost;
-    int quantity;
-    String image;
+    private String title;
+    private String description;
+    private String author;
+    private String genre_main;
+    private String genre_second;
+    private int cost;
+    private int quantity;
+    private  String image;
 
     public Book(){}
-    public Book(String title, String author,  String genre_main, String genre_second, int cost, int quantity, String image){}
+    public Book(String title, String author,  String genre_main, String genre_second, int cost, int quantity, String image, String description){}
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public String getTitle() {
         return title;
