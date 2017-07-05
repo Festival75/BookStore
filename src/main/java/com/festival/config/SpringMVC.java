@@ -1,6 +1,8 @@
 package com.festival.config;
 
 
+import com.festival.book.dao.BookDAO;
+import com.festival.book.impl.BookDAOImpl;
 import com.festival.customer.dao.CustomerDAO;
 import com.festival.customer.impl.CustomerDAOImpl;
 import org.springframework.context.annotation.Bean;
@@ -50,6 +52,11 @@ public class SpringMVC extends WebMvcConfigurerAdapter {
     @Bean
     public CustomerDAO getCustomerDAO(){
         return new CustomerDAOImpl(getDataSource());
+    }
+
+    @Bean
+    public BookDAO getBookDAO(){
+        return new BookDAOImpl(getDataSource());
     }
 
 }
