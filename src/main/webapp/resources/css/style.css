@@ -127,7 +127,7 @@ body{
 #slideshow img{
     height: 600px;
     width: 1310px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
     border-radius: 30px;
     opacity: 0.9;
 }
@@ -185,8 +185,11 @@ body{
 /*STORE*/
 
 .item ul li{
+    border-radius: 10px;
+    height: 130px;
     list-style: none;
     padding: 10px;
+    border: 1px solid black;
 }
 
 .item ul li:nth-child(odd){
@@ -196,6 +199,27 @@ body{
 .item ul li:nth-child(even){
     background: #56a79a;
     color: #fff;
+}
+.item #bookCard h1{
+    text-align: left;
+    margin: 0;
+}
+.item #bookCard h2{
+    text-align: left;
+    margin: 0;
+}
+.item #bookCard h3{
+    text-align: left;
+    margin: 0;
+}
+.item #bookCard p{
+    text-align: left;
+    margin: 0;
+    padding-left: 15px;
+}
+.item #book_image{
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border: 1px solid black;
 }
 
 /*Login*/

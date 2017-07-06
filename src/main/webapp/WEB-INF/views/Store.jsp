@@ -89,15 +89,47 @@
                             n+=1;
                         %>
                         <li>
-                            <h1><%=title%></h1>
-                            <h1><%=author%></h1>
-                            <h1><%=genre_main%></h1>
-                            <h1><%=genre_second%></h1>
-                            <h1><%=cost%></h1>
-                            <h1><%=quantity%></h1>
-                            <h1><%=image%></h1>
-                            <h1><%=description%></h1>
+                            <section id="bookCard">
+                                <div class="container">
+                                    <div class="row center-xs center-sm center-md center-lg">
+                                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                            <img id="book_image" src="<%=image%>">
+                                        </div>
+                                        <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                                            <div class="row center-xs center-sm center-md center-lg">
+                                                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                                                    <h1><%=title%></h1>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                                                    <h1><%=author%></h1>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
 
+                                                </div>
+                                            </div>
+                                            <div class="row center-xs center-sm center-md center-lg">
+                                                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                                                    <h2><%=genre_main%></h2>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                                                    <h2><%=genre_second%></h2>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                                                    <h3><%=cost%></h3>
+                                                    <h3><%=quantity%></h3>
+                                                </div>
+
+                                            </div>
+                                            <div class="row center-xs center-sm center-md center-lg">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                    <p><%=description%></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </section>
                         </li>
                     </c:forEach>
                 </ul>
