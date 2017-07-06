@@ -1,3 +1,7 @@
+<%@ page import="com.festival.book.model.Book" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.festival.book.dao.BookDAO" %>
+<%@ page import="java.util.Iterator" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -68,33 +72,34 @@
         <div class="row center-xs center-sm center-md center-lg">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 item">
                 <ul>
-                    <li>
-                        <h2>Товар 1</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequatur corporis culpa
-                            cumque deleniti distinctio ducimus illo laborum molestiae nemo nulla officiis, quaerat
-                            reiciendis ut voluptatum! Ad aut dolores suscipit.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequatur corporis culpa
-                            cumque deleniti distinctio ducimus illo laborum molestiae nemo nulla officiis, quaerat
-                            reiciendis ut voluptatum! Ad aut dolores suscipit.</p>
-                    </li>
-                    <li>
-                        <h2>Товар 2</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequatur corporis culpa
-                            cumque deleniti distinctio ducimus illo laborum molestiae nemo nulla officiis, quaerat
-                            reiciendis ut voluptatum! Ad aut dolores suscipit.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequatur corporis culpa
-                            cumque deleniti distinctio ducimus illo laborum molestiae nemo nulla officiis, quaerat
-                            reiciendis ut voluptatum! Ad aut dolores suscipit.</p>
-                    </li>
-                    <li>
-                        <h2>Товар 3</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequatur corporis culpa
-                            cumque deleniti distinctio ducimus illo laborum molestiae nemo nulla officiis, quaerat
-                            reiciendis ut voluptatum! Ad aut dolores suscipit.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequatur corporis culpa
-                            cumque deleniti distinctio ducimus illo laborum molestiae nemo nulla officiis, quaerat
-                            reiciendis ut voluptatum! Ad aut dolores suscipit.</p>
-                    </li>
+                    <%
+                        List<Book> bookList = (List<Book>) request.getAttribute("books");
+                        int n = 0;
+                    %>
+                    <c:forEach items="<%=bookList%>" var = "book">
+                        <%
+                            String title = bookList.get(n).getTitle();
+                            String author = bookList.get(n).getAuthor();
+                            String genre_main = bookList.get(n).getGenre_main();
+                            String genre_second = bookList.get(n).getGenre_second();
+                            String image = bookList.get(n).getImage();
+                            String description = bookList.get(n).getDescription();
+                            int cost = bookList.get(n).getCost();
+                            int quantity = bookList.get(n).getQuantity();
+                            n+=1;
+                        %>
+                        <li>
+                            <h1><%=title%></h1>
+                            <h1><%=author%></h1>
+                            <h1><%=genre_main%></h1>
+                            <h1><%=genre_second%></h1>
+                            <h1><%=cost%></h1>
+                            <h1><%=quantity%></h1>
+                            <h1><%=image%></h1>
+                            <h1><%=description%></h1>
+
+                        </li>
+                    </c:forEach>
                 </ul>
             </div>
         </div>

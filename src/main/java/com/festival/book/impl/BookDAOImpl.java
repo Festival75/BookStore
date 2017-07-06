@@ -33,16 +33,8 @@ public class BookDAOImpl implements BookDAO {
                     book.setGenre_second(resultSet.getString("genre_second"));
                     book.setCost(resultSet.getInt("cost"));
                     book.setQuantity(resultSet.getInt("quantity"));
-
-                    byte[] bytes = resultSet.getBytes("image");
-                    File image = new File("/img/book_image/"+resultSet.getString("title")+".png");
-                    try {
-                        FileUtils.writeByteArrayToFile(image, bytes);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
-                    book.setImage("/img/book_image/"+resultSet.getString("title")+".png");
+                    book.setImage(resultSet.getString("image"));
+                    book.setDescription(resultSet.getString("description"));
                     return book;
                 }
                 return null;
@@ -65,28 +57,19 @@ public class BookDAOImpl implements BookDAO {
             aBook.setGenre_second(resultSet.getString("genre_second"));
             aBook.setCost(resultSet.getInt("cost"));
             aBook.setQuantity(resultSet.getInt("quantity"));
-
-            byte[] bytes = resultSet.getBytes("image");
-            File image = new File("/img/book_image/"+resultSet.getString("title")+".png");
-            try {
-                FileUtils.writeByteArrayToFile(image, bytes);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            aBook.setImage("/img/book_image/"+resultSet.getString("title")+".png");
+            aBook.setImage(resultSet.getString("image"));
+            aBook.setDescription(resultSet.getString("description"));
             return aBook;
         });
     }
 
     @Override
-    public Boolean addBook(String title, String author, String genre_main, String genre_second, int cost, int quantity, byte[] image, String description) throws IOException {
+    public Boolean addBook(String title, String author, String genre_main, String genre_second, int cost, int quantity, String image, String description) throws IOException {
         if (getBook(title) == null) {
 
             File imageSource = new File("/BookStore/resources/img/book_image/"+title+".png");
-            byte[] imageBytes = FileUtils.readFileToByteArray(imageSource);
             String sql = "INSERT INTO book (title, author, genre_main, genre_second, cost, quantity, image, description)" +
-                    "VALUES ('" + title + "','" + author + "','" + genre_main + "','" + genre_second + "','" + cost + "','" + quantity + "','" + imageBytes +"','" + description +  "')";
+                    "VALUES ('" + title + "','" + author + "','" + genre_main + "','" + genre_second + "','" + cost + "','" + quantity + "','" + image +"','" + description +  "')";
             template.update(sql);
             return true;
 
@@ -96,7 +79,7 @@ public class BookDAOImpl implements BookDAO {
     }
 
     @Override
-    public Boolean updateBook(String title, String author, String genre_main, String genre_second, int cost, int quantity, byte[] image, String description) {
+    public Boolean updateBook(String title, String author, String genre_main, String genre_second, int cost, int quantity, String image, String description) {
         return null;
     }
 

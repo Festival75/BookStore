@@ -68,11 +68,12 @@
                     <input type="text" name="genre_second" placeholder="Вторичный жанр"><br>
                     <input type="text" name="cost" placeholder="Стоимость"><br>
                     <input type="text" name="quantity" placeholder="Колличество"><br>
+                    <input type="text" name="image" placeholder="тут будет картинка"><br>
                     <textarea name="description" placeholder="Описание"></textarea><br>
-                    <input id="fileupload" name="myfile" type="file"><br>
                     <input type="submit" name="sendData" value="Добавить книгу">
 
                 </form>
+
             </div>
         </div>
     </div>

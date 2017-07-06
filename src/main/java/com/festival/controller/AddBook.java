@@ -32,17 +32,9 @@ public class AddBook {
         int quantity = Integer.parseInt(request.getParameter("quantity"));
         int cost = Integer.parseInt(request.getParameter("cost"));
         String description = (String) request.getParameter("description");
-        System.out.println(request.getAttribute("myfile"));
-        byte[] bytes = (byte[]) request.getAttribute("myfile");
+        String imgName = request.getParameter("image");
 
-        File image = new File("/resources/img/book_image/"+request.getAttribute("title")+".png");
-        try {
-            FileUtils.writeByteArrayToFile(image, bytes);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        bookDAO.addBook(title,author,genre_main,genre_second,cost,quantity,bytes,description);
+        bookDAO.addBook(title,author,genre_main,genre_second,cost,quantity,imgName,description);
         ModelAndView mv = new ModelAndView();
         mv.setViewName("Admin");
         return mv;
